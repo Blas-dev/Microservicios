@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Scrum</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <h1>Gestión Scrum</h1>
+
+    <section class="card">
+        <h2>Crear Sprint</h2>
+
+        <input type="text" id="nombreSprint" placeholder="Nombre sprint">
+
+        <input type="date" id="fechaInicio">
+
+        <input type="date" id="fechaFin">
+
+        <button onclick="crearSprint()">
+            Crear Sprint
+        </button>
+    </section>
+
+    <section class="card">
+        <h2>Sprints</h2>
+
+        <div id="listaSprints"></div>
+    </section>
+
+    <section class="card">
+        <h2>Crear Historia</h2>
+
+        <input type="text"
+               id="titulo"
+               placeholder="Título">
+
+        <textarea id="descripcion"
+                  placeholder="Descripción">
+        </textarea>
+
+        <input type="text"
+               id="responsable"
+               placeholder="Responsable">
+
+        <input type="number"
+               id="puntos"
+               placeholder="Puntos">
+
+        <select id="estado">
+            <option value="nueva">Nueva</option>
+            <option value="activa">Activa</option>
+            <option value="finalizada">Finalizada</option>
+        </select>
+
+        <select id="sprintId"></select>
+
+        <button onclick="crearHistoria()">
+            Crear Historia
+        </button>
+    </section>
+
+    <section class="card">
+        <h2>Historias</h2>
+
+        <div id="listaHistorias"></div>
+    </section>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
