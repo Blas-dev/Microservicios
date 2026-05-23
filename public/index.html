@@ -3,73 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión Scrum</title>
-
+    <title>Gestor de Historias de Usuario</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Gestor de Historias de Usuario</h1>
+        
+        <div class="forms-container">
+            <form id="form-sprint">
+                <h2>Crear Sprint</h2>
+                <input type="text" id="sprint-nombre" placeholder="Nombre del Sprint" required>
+                <input type="date" id="sprint-inicio" required>
+                <input type="date" id="sprint-fin" required>
+                <button type="submit">Guardar Sprint</button>
+            </form>
 
-    <h1>Gestión Scrum</h1>
+            <form id="form-historia">
+                <h2>Crear Historia de Usuario</h2>
+                <input type="text" id="historia-titulo" placeholder="Título" required>
+                <textarea id="historia-descripcion" placeholder="Descripción" required></textarea>
+                <input type="text" id="historia-responsable" placeholder="Responsable" required>
+                <input type="number" id="historia-puntos" placeholder="Puntos de complejidad" required>
+                <select id="historia-sprint" required></select>
+                <input type="date" id="historia-creacion" required>
+                <button type="submit">Guardar Historia</button>
+            </form>
+        </div>
 
-    <section class="card">
-        <h2>Crear Sprint</h2>
+        <div class="acciones">
+            <button id="btn-informe">Generar Informe</button>
+        </div>
+        <div id="informe-container"></div>
 
-        <input type="text" id="nombreSprint" placeholder="Nombre sprint">
-
-        <input type="date" id="fechaInicio">
-
-        <input type="date" id="fechaFin">
-
-        <button onclick="crearSprint()">
-            Crear Sprint
-        </button>
-    </section>
-
-    <section class="card">
-        <h2>Sprints</h2>
-
-        <div id="listaSprints"></div>
-    </section>
-
-    <section class="card">
-        <h2>Crear Historia</h2>
-
-        <input type="text"
-               id="titulo"
-               placeholder="Título">
-
-        <textarea id="descripcion"
-                  placeholder="Descripción">
-        </textarea>
-
-        <input type="text"
-               id="responsable"
-               placeholder="Responsable">
-
-        <input type="number"
-               id="puntos"
-               placeholder="Puntos">
-
-        <select id="estado">
-            <option value="nueva">Nueva</option>
-            <option value="activa">Activa</option>
-            <option value="finalizada">Finalizada</option>
-        </select>
-
-        <select id="sprintId"></select>
-
-        <button onclick="crearHistoria()">
-            Crear Historia
-        </button>
-    </section>
-
-    <section class="card">
-        <h2>Historias</h2>
-
-        <div id="listaHistorias"></div>
-    </section>
-
+        <div id="historias-container"></div>
+    </div>
     <script src="js/app.js"></script>
-
 </body>
 </html>
