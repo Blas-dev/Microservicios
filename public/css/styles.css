@@ -1,67 +1,198 @@
-body{
-    font-family: Arial, sans-serif;
-    background:#f5f5f5;
+*{
     margin:0;
-    padding:30px;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #eef2ff,
+        #f8fafc
+    );
+    min-height:100vh;
+    padding:40px 20px;
+    color:#1e293b;
 }
 
 h1{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:35px;
+    font-size:42px;
+    font-weight:700;
+    color:#0f172a;
 }
 
 .card{
-    background:white;
-    max-width:900px;
-    margin:20px auto;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    background:#ffffff;
+    max-width:1000px;
+    margin:25px auto;
+    padding:30px;
+    border-radius:22px;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-3px);
 }
 
 h2{
-    margin-top:0;
+    margin-bottom:20px;
+    color:#1e293b;
+    font-size:28px;
 }
 
 input,
 textarea,
 select{
     width:100%;
-    padding:12px;
-    margin-bottom:15px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    box-sizing:border-box;
+    padding:14px 16px;
+    border-radius:14px;
+    border:1px solid #cbd5e1;
+    margin-bottom:16px;
+    outline:none;
+    font-size:15px;
+    transition:0.2s ease;
+    background:#fff;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color:#6366f1;
+    box-shadow:
+        0 0 0 4px rgba(99,102,241,0.15);
 }
 
 textarea{
-    min-height:100px;
+    min-height:120px;
     resize:vertical;
 }
 
 button{
     border:none;
-    padding:12px 20px;
-    border-radius:8px;
-    cursor:pointer;
+    border-radius:14px;
+    padding:14px 22px;
     font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.25s ease;
     margin-right:10px;
 }
 
 button:hover{
-    opacity:0.9;
+    transform:translateY(-2px);
 }
 
+/* botón principal */
+.card button{
+    background:#4f46e5;
+    color:white;
+}
+
+.card button:hover{
+    background:#4338ca;
+}
+
+/* cards historias y sprints */
 .historia-card,
 .sprint-card{
-    background:#fafafa;
-    border:1px solid #ddd;
-    border-radius:10px;
-    padding:15px;
-    margin-bottom:15px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:20px;
+    padding:22px;
+    margin-bottom:18px;
+    transition:0.2s ease;
+}
+
+.historia-card:hover,
+.sprint-card:hover{
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.08);
 }
 
 .historia-card h3,
 .sprint-card h3{
-    margin-top:0;
+    margin-bottom:12px;
+    color:#0f172a;
+    font-size:22px;
+}
+
+.historia-card p,
+.sprint-card p{
+    margin-bottom:8px;
+    line-height:1.5;
+}
+
+/* botones internos */
+.historia-card button{
+    margin-top:10px;
+}
+
+/* editar */
+.historia-card button:first-of-type{
+    background:#0ea5e9;
+    color:white;
+}
+
+.historia-card button:first-of-type:hover{
+    background:#0284c7;
+}
+
+/* eliminar */
+.historia-card button:last-of-type{
+    background:#ef4444;
+    color:white;
+}
+
+.historia-card button:last-of-type:hover{
+    background:#dc2626;
+}
+
+/* badges estado */
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.badge.nueva{
+    background:#fef3c7;
+    color:#92400e;
+}
+
+.badge.activa{
+    background:#dbeafe;
+    color:#1d4ed8;
+}
+
+.badge.finalizada{
+    background:#dcfce7;
+    color:#166534;
+}
+
+/* responsive */
+@media(max-width:768px){
+
+    body{
+        padding:20px;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    .card{
+        padding:22px;
+    }
+
+    button{
+        width:100%;
+        margin-bottom:10px;
+    }
 }
